@@ -8,11 +8,11 @@ function reload() {
 }
 
 async function fetchNews(query) {
-    const res = await fetch(`${url}${query}&apiKey=${API_KEY}, {
+    const res = await fetch(`${url}${query}&apiKey=${API_KEY}`, {
         headers: {
             'Upgrade': 'HTTP/2.0',
         },
-    }`);
+    });
     const data = await res.json();
     bindData(data.articles);
 }
